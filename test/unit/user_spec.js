@@ -3,7 +3,7 @@
 
 'use strict';
 
-process.env.DBNAME = 'todo-test';
+process.env.DBNAME = 'meme-test';
 
 var expect = require('chai').expect;
 var Mongo = require('mongodb');
