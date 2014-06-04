@@ -10,7 +10,9 @@ class Meme{
     meme.userId = Mongo.ObjectID(userId);
     meme.tag = obj.tag;
     meme.name = obj.name;
-    meme.file = obj.file;
+    meme.top = obj.top;
+    meme.bottom = obj.bottom;
+    meme.url = obj.url;
     meme.save(()=>fn(meme));
   }
 
