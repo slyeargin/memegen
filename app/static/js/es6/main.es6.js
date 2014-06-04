@@ -30,14 +30,14 @@
     var url = $('#memes option:selected').data('url').slice(0, -1);
     var width = $('#memes option:selected').data('width');
     var height = $('#memes option:selected').data('height').slice(0, -1);
-    $('#showMeme').html(`<input id='name' placeholder='Name Your Meme' style='width:${width - 6}px' /><div id='pic' style='background-image:url(${url}); width:${width}px; height:${height}px'><input id='top' placeholder='Type top caption here' /><input id='bottom' placeholder='Type bottom caption here' /></div>);
+    $('#showMeme').html(`<input id='name' placeholder='Name Your Meme' style='width:${width - 6}px' /><div id='pic' style='background-image:url(${url}); width:${width}px; height:${height}px'><input id='top' placeholder='Type top caption here' /><input id='bottom' placeholder='Type bottom caption here' /></div>`);
   }
 
   function getMemes(){
     ajax('/memes', 'get', null, obj=>{
       var meme = obj.data.memes;
       meme.forEach(m=>{
-        $('#memes').append(`<option data-url=${m.url}, data-height=${m.height}, data-width=${m.width} class='meme'>${m.name}</option>`);
+        $('#memes').append(`<option data-url=${m.url} data-height=${m.height} data-width=${m.width} class='meme'>${m.name}</option>`);
       });
       $('#memes').show();
     });
