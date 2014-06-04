@@ -109,4 +109,15 @@ describe('Meme', function(){
     });
   });
 
+  describe('#nuke', function () {
+    it('should delete the meme to the database', function (done) {
+      meme1.nuke(function () {
+        Meme.findById(meme1._id.toString(), function (meme) {
+          expect(meme).to.be.null;
+          done();
+        });
+      });
+    });
+  });
+
 });

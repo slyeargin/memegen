@@ -1,3 +1,5 @@
+'use strict';
+
 var memeCollection = global.nss.db.collection('memes');
 var Mongo = require('mongodb');
 var _ = require('lodash');
@@ -35,6 +37,10 @@ class Meme{
 
   save(fn){
     memeCollection.save(this, ()=>fn());
+  }
+
+  nuke(fn){
+    memeCollection.findAndRemove(this, ()=>fn());
   }
 
 }
