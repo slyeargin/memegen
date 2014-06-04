@@ -16,12 +16,15 @@ module.exports = (req, res, next)=>{
 function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
   var users = traceur.require(__dirname + '/../routes/users.js');
+  var memes = traceur.require(__dirname + '/../routes/memes.js');
+
+  app.all('*', users.lookup);
 
   app.get('/', dbg, home.index);
-  app.post('/register', dbg, users.register);
   app.post('/login', dbg, users.login);
-  app.get('/confirmation', dbg, users.confirmation);
-  //app.get('/users/:userId', dbg, users.dashboard);
+  app.post('/register', dbg, users.register);
+  app.get('/dashboard', dbg, users.dashboard);
+  app.get('/memes/:id', memes.show);
 
 
   console.log('Routes Loaded');

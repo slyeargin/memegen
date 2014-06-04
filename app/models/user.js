@@ -1,18 +1,18 @@
 'use strict';
 
-var users = global.nss.db.collection('users');
+var bcrypt = require('bcrypt');
+var userCollection = global.nss.db.collection('users');
 var Mongo = require('mongodb');
 var _ = require('lodash');
-var bcrypt = require('bcrypt');
 
 class User{
   static register(obj, fn){
-    users.findOne({email:obj.email}, (e,u)=>{
+    userCollection.findOne({email:obj.email}, (e,u)=>{
       if(!u){
         var user = new User();
         user.email = obj.email;
         user.password = bcrypt.hashSync(obj.password, 8);
-        users.save(user, ()=>fn(user));
+        userCollection.save(user, ()=>fn(user));
       }else{
         fn(null);
       }
@@ -20,7 +20,7 @@ class User{
   }
 
   static login(obj, fn){
-    users.findOne({email:obj.email}, (e,u)=>{
+    userCollection.findOne({email:obj.email}, (e,u)=>{
       if(u){
         var isMatch = bcrypt.compareSync(obj.password, u.password);
         if(isMatch){
@@ -33,28 +33,20 @@ class User{
       }
     });
   }
-  //
-  // save(fn){
-  //   users.save(this, ( )=>{
-  //     fn();
-  //   });
-  // }
 
-  static findByUserEmail(email, fn){
-    users.findOne({email:email}, (err, user)=>{
-      user = _.create(User.prototype, user);
-      fn(user);
-    });
-  }
-
-  static findByUserId(userId, fn){
+  static findById(userId, fn){
     userId = Mongo.ObjectID(userId);
-    users.findOne({_id:userId}, (err, user)=>{
+    userCollection.findOne({_id:userId}, (e,user)=>{
+      if(user){
         user = _.create(User.prototype, user);
         fn(user);
+      }else{
+        fn(null);
+      }
     });
   }
+
 
 }
 
-module.exports = User; //exporting Class out
+module.exports = User;

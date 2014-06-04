@@ -29,7 +29,7 @@ block content
           h4.modal-title#myModalLable Registration Form
         .modal-body
           #registration
-            form(action='/register', method='POST', enctype='multipart/form-data')
+            form(action='/register', method='POST')
               input.form-control.regemail(type='email', name='email', placeholder='Email', required='required')
               input.form-control.regpassword(type='password', name='password', placeholder='Password', required='required')
 
