@@ -1,3 +1,5 @@
+'use strict';
+
 var memeCollection = global.nss.db.collection('memes');
 var Mongo = require('mongodb');
 var _ = require('lodash');
@@ -19,7 +21,7 @@ class Meme{
         m = _.create(Meme.prototype, m);
         fn(m);
       }else{
-        fn(null)
+        fn(null);
       }
     });
   }

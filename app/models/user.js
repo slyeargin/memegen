@@ -1,3 +1,5 @@
+'use strict';
+
 var bcrypt = require('bcrypt');
 var userCollection = global.nss.db.collection('users');
 var Mongo = require('mongodb');
@@ -32,7 +34,7 @@ class User{
     });
   }
 
-  static findByUserId(userId, fn){
+  static findById(userId, fn){
     userId = Mongo.ObjectID(userId);
     userCollection.findOne({_id:userId}, (e,user)=>{
       if(user){
