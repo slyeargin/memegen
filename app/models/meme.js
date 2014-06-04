@@ -19,7 +19,7 @@ class Meme{
         m = _.create(Meme.prototype, m);
         fn(m);
       }else{
-        fn(null)
+        fn(null);
       }
     });
   }

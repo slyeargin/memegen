@@ -35,9 +35,9 @@ describe('Meme', function(){
           Meme.create(sue._id.toString(), {name: 'test1', tag: 'One Does Not Simply', file: 'http://i.imgflip.com/1bij.jpg'}, function (meme) {
             meme1 = meme;
             done();
-          })
+          });
         });
-      })
+      });
     });
   });
 
@@ -104,9 +104,9 @@ describe('Meme', function(){
           expect(meme.tag).to.equal(meme1.tag);
           expect(meme.file).to.equal(meme1.file);
           done();
-        })
-      })
-    })
-  })
+        });
+      });
+    });
+  });
 
 });
