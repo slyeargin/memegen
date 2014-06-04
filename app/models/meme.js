@@ -12,6 +12,8 @@ class Meme{
     meme.name = obj.name;
     meme.top = obj.top;
     meme.bottom = obj.bottom;
+    meme.width = obj.width;
+    meme.height = obj.height;
     meme.url = obj.url;
     meme.save(()=>fn(meme));
   }
