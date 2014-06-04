@@ -21,7 +21,9 @@
     var name = $('#name').val();
     var tag = $('#memes option:selected').text();
     var url = $('#memes option:selected').data('url');
-    ajax('/memes/create', 'post', {top:top, bottom:bottom, name:name, tag:tag, url:url});
+    ajax('/memes/create', 'post', {top:top, bottom:bottom, name:name, tag:tag, url:url}, m=>{
+      window.location= `/memes/${m._id}`;
+    });
   }
 
   function showPic(){

@@ -2,16 +2,5 @@ extends ../shared/template
 
 block content
 
-  .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      .container
-          .nav-bar-header
-              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                  span.sr-only Toggle navigation
-                  span.icon-bar
-                  span.icon-bar
-                  span.icon-bar
-          .navbar-collapse.collapse
-
-  Tag: #{meme.tag}
-  Title: #{meme.name}
-  File: #{meme.file}      
+  h1= meme.name
+  .showMeme(style='background-image: url(#{meme.url}); ')

@@ -21,7 +21,6 @@ function load(app, fn){
   app.all('*', users.lookup);
 
   app.get('/', dbg, home.index);
-  
   app.get('/memes', dbg, home.memes);
 
   app.post('/login', dbg, users.login);
