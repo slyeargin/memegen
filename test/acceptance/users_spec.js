@@ -5,8 +5,8 @@
 
 process.env.DBNAME = 'meme-test';
 
-var expect = require('chai').expect;
-var Mongo = require('mongodb');
+// var expect = require('chai').expect;
+// var Mongo = require('mongodb');
 var app = require('../../app/app');
 var request = require('supertest');
 var traceur = require('traceur');
