@@ -37,6 +37,10 @@ class Meme{
     memeCollection.save(this, ()=>fn());
   }
 
+  nuke(fn){
+    memeCollection.findAndRemove(this, ()=>fn());
+  }
+
 }
 
 module.exports = Meme;
