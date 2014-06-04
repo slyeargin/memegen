@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* jshint unused:false */
 
 (function(){
@@ -59,3 +60,27 @@ function ajax(url, type, data={}, success=r=>console.log(r), dataType='json'){
   'use strict';
   $.ajax({url:url, type:type, dataType:dataType, data:data, success:success});
 }
+=======
+(function() {
+    'use strict';
+
+    $(document).ready(initialize);
+
+    function initialize() {
+        $('.register').click(register);
+        $('.create').click(create);
+    }
+
+    function register(e) {
+        $('#registration').css('display', 'block');
+        e.preventDefault();
+    }
+
+    function create(e) {
+      $('#create').css('display', 'block');
+      e.preventDefault();
+    }
+
+
+})();
+>>>>>>> master

@@ -75,9 +75,9 @@ describe('User', function(){
     });
   });
 
-  describe('.findByUserId', function () {
+  describe('.findById', function () {
     it('should return a user with matching credentials', function (done) {
-      User.findByUserId(sue._id, function (user) {
+      User.findById(sue._id, function (user) {
         expect(user).to.be.instanceof(User);
         expect(user.email).to.equal(sue.email);
         done();
@@ -85,7 +85,7 @@ describe('User', function(){
     });
 
     it('should return a null user object', function (done) {
-      User.findByUserId('538de154065c89565f9bde6c', function (user) {
+      User.findById('538de154065c89565f9bde6c', function (user) {
         expect(user).to.be.null;
         done();
       });
