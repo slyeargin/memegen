@@ -29,7 +29,8 @@
     "bcrypt":          "*",
     "cookie-session":  "*",
     "cookies":         "*",
-    "multiparty":      "*"
+    "multiparty":      "*",
+    "caption":         "*"
   },
   "devDependencies": {
     "grunt":                "*",
