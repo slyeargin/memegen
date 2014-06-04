@@ -17,6 +17,7 @@ function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
 
   app.get('/', dbg, home.index);
+  app.get('/memes', dbg, home.memes);
   console.log('Routes Loaded');
   fn();
 }
