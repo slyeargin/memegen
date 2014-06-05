@@ -27,6 +27,8 @@ html
                     button.signin.btn.btn-success.login Login
                     button.register.btn.btn-warning.btn.btn-primary.btn(type='submit', data-toggle='modal', data-target='#myModal') Register
               if(user)
+                ul.nav.navbar-nav.navbar-left
+                  li: a(href='/dashboard') Dashboard
                 ul.nav.navbar-nav.navbar-right
                   li: p.navbar-text(href='#') Signed in as #{user.email}
                   li: a(href='/logout') Logout
