@@ -3,6 +3,8 @@
 (function(){
   'use strict';
 
+  $(document).ready(init);
+
   function init(){
     $('.register').click(register);
     $('.create').click(create);
@@ -12,7 +14,7 @@
     $('#memes').change(showPic);
     $('#generate').click(generate);
     $('#myCarousel').carousel({
-      interval: 10000
+      interval: 7000
     });
   }
 
