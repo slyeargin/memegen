@@ -25,6 +25,7 @@ function load(app, fn){
 
   app.post('/login', dbg, users.login);
   app.post('/register', dbg, users.register);
+  app.get('/logout', dbg, users.logout);
   app.get('/dashboard', dbg, users.dashboard);
   app.post('/memes/create', dbg, memes.create);
   app.get('/memes/:id', memes.show);
