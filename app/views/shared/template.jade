@@ -2,6 +2,7 @@ doctype html
 html
   head
     meta(charset='utf-8')
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
     title= title
     link(href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet')
     link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
@@ -28,8 +29,9 @@ html
                     button.register.btn.btn-warning.btn.btn-primary.btn(type='submit', data-toggle='modal', data-target='#myModal') Register
               if(user)
                 ul.nav.navbar-nav.navbar-right
-                  li: p.navbar-text(href='#') Signed in as #{user.email}
-                  li: a(href='/logout') Logout
+                  li: a.navbar-text(href='#') Signed in as #{user.email}
+                  li: a.navbar-text(href='/logout') Logout
+
     if(!user)
       .modal.fade#myModal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-dialog
@@ -59,4 +61,4 @@ html
     script(src='/js/es6/compiled/main.js')
     //- script(src='/js/es6/compiled/sockets.js')
 
-    block scripts
+  block scripts

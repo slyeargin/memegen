@@ -51,22 +51,48 @@ a:hover{
   display: block;
   width: 200px;
   margin: 0 auto;
-  background: #dedede;
-  color: #232323;
+  color: #ffffff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
   padding: 1em 0;
-  border: 1px solid #444;
+  border: 1px solid;
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+  text-shadow: 1px 1px 1px rgba(159, 159, 159, 0.23);
+  border-color: #630e45;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #DB0D93),
+    color-stop(1, #630E45)
+  );
+  background-image: -o-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
+  background-image: -moz-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
+  background-image: -webkit-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
+  background-image: -ms-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
+  background-image: linear-gradient(to bottom, #DB0D93 0%, #630E45 100%);
 }
 .share:hover {
-  background: #ffffff;
+  border-color: #a65474;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgba(159, 159, 159, 0.23);
+  background-image: -webkit-gradient(
+  	linear,
+  	left top,
+  	left bottom,
+  	color-stop(0, #A65473),
+  	color-stop(1, #FCBFE1)
+  );
+  background-image: -o-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
+  background-image: -moz-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
+  background-image: -webkit-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
+  background-image: -ms-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
+  background-image: linear-gradient(to bottom, #A65473 0%, #FCBFE1 100%);
 }
 .hideshare-list a {
   color: #dedede;

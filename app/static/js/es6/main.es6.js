@@ -13,6 +13,9 @@
     $('#getMemes').click(getMemes);
     $('#memes').change(showPic);
     $('#generate').click(generate);
+    $('#myCarousel').carousel({
+      interval: 7000
+    });
   }
 
   function generate(){
@@ -38,7 +41,7 @@
     var url = $('#memes option:selected').data('url');
     var width = $('#memes option:selected').data('width');
     var height = $('#memes option:selected').data('height');
-    $('#showMeme').html(`<input id='name' placeholder='Name Your Meme' style='width:${width - 6}px' /><div id='pic' style='background-image:url(${url}); width:${width}px; height:${height}px'><input class='top' placeholder='Type top caption here' /><input class='bottom' placeholder='Type bottom caption here' /></div>`);
+    $('#showMeme').html(`<input id='name' class='form-control' placeholder='Name Your Meme' style='width:${width - 6}px' /><div id='pic' style='background-image:url(${url}); width:${width}px; height:${height}px'><input class='top' placeholder='Type top caption here' /><input class='bottom' placeholder='Type bottom caption here' /></div>`);
   }
 
   function getMemes(){
