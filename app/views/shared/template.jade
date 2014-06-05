@@ -3,11 +3,14 @@ html
   head
     meta(charset='utf-8')
     title= title
+    link(href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet')
     link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    link(href='/css/hideshare.css', rel='stylesheet')
     link(href='/less/app.css', rel='stylesheet')
+
   body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-        .container
+        .container-fluid
             .nav-bar-header
                 button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
                     span.sr-only Toggle navigation
@@ -45,6 +48,7 @@ html
     script(src='/js/vendor/lodash-2.4.1.js')
     script(src='/js/vendor/moment-2.6.0.js')
     script(src='/js/vendor/traceur.js')
+    script(src='/js/vendor/hideshare.min.js')
     //- script(src='/socket.io/socket.io.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
     script(src='/js/es5/main.js')

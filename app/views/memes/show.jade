@@ -2,5 +2,24 @@ extends ../shared/template
 
 block content
 
+  a.share(href="#") SHARE ME!
   h1= meme.name
-  .showMeme(style='background-image: url(#{meme.url}); ')
+  #meme(style='background-image: url(#{meme.url}); width: #{meme.width}px; height: #{meme.height}px')
+    .top(style='width: #{meme.width}px') #{meme.top}
+    .bottom(style='width: #{meme.width}px') #{meme.bottom}
+  #displayTag(style='width: #{meme.width}px') TAG: #{meme.tag}
+
+block scripts
+  script.
+    $(document).ready(function() {
+      $('.share').hideshare({
+        link: 'http://localhost:4001/memes/#{meme._id}',           // Link to URL defaults to document.URL
+        title: 'Check Out My Meme!',          // Title for social post defaults to document.title
+        media: '#{meme.url}',          // Link to image file defaults to null
+        facebook: true,     // Turns on Facebook sharing
+        twitter: true,      // Turns on Twitter sharing
+        pinterest: true,    // Turns on Pinterest sharing
+        position: 'right', // Options: Top, Bottom, Left, Right
+        speed: 50           // Speed of transition
+      });
+    });
