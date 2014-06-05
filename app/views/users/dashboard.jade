@@ -3,7 +3,6 @@ extends ../shared/template
 block content
 
   button.btn.btn-primary#getMemes Pick your Meme
-
   select#memes
     option.meme Select A Meme
   button.btn.btn-primary#generate Generate!
@@ -15,7 +14,7 @@ block content
       p.all All Your Cool Memes:
       each meme in memes
         .preview
-          div(style='background-image: url(#{meme.url}); width: #{meme.width/2}px; height: #{meme.height/2}px; position: relative')
-            .top(style='width: #{meme.width/2}px') #{meme.top}
-            .bottom(style='width: #{meme.width/2}px') #{meme.bottom}
+          div(style='background-image: url(#{meme.url}); width: 200px; height: 200px; position: relative')
+            .top #{meme.top}
+            .bottom #{meme.bottom}
           a(href=('/meme/#{meme._id.toString()}')) Show Meme
