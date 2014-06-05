@@ -23,6 +23,10 @@ html
                           input.form-control.password(type='password', name='password' placeholder='Password')
                       button.signin.btn.btn-success.login Login
                       button.register.btn.btn-warning.btn.btn-primary.btn(type='submit', data-toggle='modal', data-target='#myModal') Register
+            if(user)
+              ul.nav.navbar-nav.navbar-right
+                li: p.navbar-text(href='#') Signed in as #{user.email}
+                li: a(href='/logout') Logout
     if(!user)
       .modal.fade#myModal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-dialog
