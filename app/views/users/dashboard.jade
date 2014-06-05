@@ -9,3 +9,11 @@ block content
   button.btn.btn-primary#generate Generate!
   #addText
   #showMeme
+
+  #history
+    each meme in memes
+      .preview
+        div(style='background: url(#{meme.url});')
+          .top= meme.top
+          .bottom= meme.bottom
+        a(href=('/meme/#{meme._id.toString()}')) Show Meme
