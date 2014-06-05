@@ -10,7 +10,11 @@ class Meme{
     meme.userId = Mongo.ObjectID(userId);
     meme.tag = obj.tag;
     meme.name = obj.name;
-    meme.file = obj.file;
+    meme.top = obj.top;
+    meme.bottom = obj.bottom;
+    meme.width = obj.width;
+    meme.height = obj.height;
+    meme.url = obj.url;
     meme.save(()=>fn(meme));
   }
 
@@ -37,6 +41,10 @@ class Meme{
 
   save(fn){
     memeCollection.save(this, ()=>fn());
+  }
+
+  nuke(fn){
+    memeCollection.findAndRemove(this, ()=>fn());
   }
 
 }

@@ -32,7 +32,7 @@ describe('Meme', function(){
       global.nss.db.collection('memes').drop(function () {
         User.register({email:'sue@aol.com', password:'abcd'}, function(u){
           sue = u;
-          Meme.create(sue._id.toString(), {name: 'test1', tag: 'One Does Not Simply', file: 'http://i.imgflip.com/1bij.jpg'}, function (meme) {
+          Meme.create(sue._id.toString(), {name: 'test1', tag: 'One Does Not Simply', url: 'http://i.imgflip.com/1bij.jpg', top: 'herp', bottom: 'derp'}, function (meme) {
             meme1 = meme;
             done();
           });
@@ -43,11 +43,11 @@ describe('Meme', function(){
 
   describe('.create', function () {
     it('should successfully create a meme', function (done) {
-      Meme.create(sue._id.toString(), {name: 'test2', tag: 'One Does Not Simply', file: 'http://i.imgflip.com/1bij.jpg'}, function(meme){
+      Meme.create(sue._id.toString(), {name: 'test2', tag: 'One Does Not Simply', url: 'http://i.imgflip.com/1bij.jpg', top: 'herp', bottom: 'derp'}, function(meme){
           expect(meme).to.be.ok;
           expect(meme).to.be.an.instanceof(Meme);
           expect(meme.userId.toString()).to.equal(sue._id.toString());
-          expect(meme.file).to.be.a('string');
+          expect(meme.url).to.be.a('string');
           expect(meme.tag).to.be.a('string');
           expect(meme._id).to.be.an.instanceof(Mongo.ObjectID);
           done();
@@ -102,7 +102,18 @@ describe('Meme', function(){
           expect(meme.name).to.equal(meme1.name);
           expect(meme.userId.toString()).to.equal(meme1.userId.toString());
           expect(meme.tag).to.equal(meme1.tag);
-          expect(meme.file).to.equal(meme1.file);
+          expect(meme.url).to.equal(meme1.url);
+          done();
+        });
+      });
+    });
+  });
+
+  describe('#nuke', function () {
+    it('should delete the meme to the database', function (done) {
+      meme1.nuke(function () {
+        Meme.findById(meme1._id.toString(), function (meme) {
+          expect(meme).to.be.null;
           done();
         });
       });
