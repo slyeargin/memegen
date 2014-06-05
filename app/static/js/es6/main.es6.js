@@ -6,6 +6,9 @@
     function initialize() {
         $('.register').click(register);
         $('.create').click(create);
+        $('#myCarousel').carousel({
+          interval: 10000
+        });
     }
 
     function register(e) {

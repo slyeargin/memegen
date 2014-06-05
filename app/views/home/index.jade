@@ -35,3 +35,54 @@ block content
 
               .modal-footer
                 button.submit.btn.btn-info Submit
+
+  div.container
+    div.row
+      div.span12
+        div.well
+          div#myCarousel.carousel.slide
+            ol.carousel-indicators
+              li.active(data-target='#myCarousel', data-slide-to='0')
+              li(data-target='#myCarousel', data-slide-to='1')
+              //- li(data-target='#myCarousel', data-slide-to='2')
+            // Carousel items
+            div.carousel-inner
+              div.item.active
+                div.row-fluid
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme12.jpeg', alt='Image', style='max-width:100%;')
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme14.jpeg', alt='Image', style='max-width:100%;')
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme11.jpeg', alt='Image', style='max-width:100%;')
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme15.jpeg', alt='Image', style='max-width:100%;')
+                // /row-fluid
+              // /item
+              div.item
+                div.row-fluid
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme1.jpeg', alt='Image', style='max-width:100%;')
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme5.jpeg', alt='Image', style='max-width:100%;')
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme10.jpeg', alt='Image', style='max-width:100%;')
+                  div.col-md-3
+                    a.thumbnail(href='#x')
+                      img(src='/img/meme9.jpeg', alt='Image', style='max-width:100%;')
+                // /row-fluid
+              // /item
+                // /row-fluid
+              // /item
+            // /carousel-inner
+            a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
+            a.right.carousel-control(href='#myCarousel', data-slide='next') ›
+          // /myCarousel
+        // /well
