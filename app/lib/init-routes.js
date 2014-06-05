@@ -21,11 +21,14 @@ function load(app, fn){
   app.all('*', users.lookup);
 
   app.get('/', dbg, home.index);
+  app.get('/memes', dbg, home.memes);
+
   app.post('/login', dbg, users.login);
   app.post('/register', dbg, users.register);
+  app.get('/logout', dbg, users.logout);
   app.get('/dashboard', dbg, users.dashboard);
+  app.post('/memes/create', dbg, memes.create);
   app.get('/memes/:id', memes.show);
-
 
   console.log('Routes Loaded');
   fn();
