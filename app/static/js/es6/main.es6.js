@@ -16,14 +16,18 @@
   }
 
   function generate(){
-    var top = $('#top').val();
-    var bottom = $('#bottom').val();
+    var top = $('.top').val();
+    var bottom = $('.bottom').val();
     var name = $('#name').val();
     var tag = $('#memes option:selected').text();
     var url = $('#memes option:selected').data('url');
     var width = $('#memes option:selected').data('width');
     var height = $('#memes option:selected').data('height');
+    console.log(top);
+    console.log(bottom);
     ajax('/memes/create', 'post', {top:top, bottom:bottom, name:name, tag:tag, url:url, width:width, height:height}, m=>{
+      console.log(m.top);
+      console.log(m.bottom);
       window.location= `/memes/${m._id}`;
     });
   }

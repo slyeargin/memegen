@@ -5,8 +5,8 @@ block content
   a.share(href="#") SHARE ME!
   h1= meme.name
   #meme(style='background-image: url(#{meme.url}); width: #{meme.width}px; height: #{meme.height}px')
-    .top(style='width: #{meme.width}px') #{meme.top}
-    .bottom(style='width: #{meme.width}px') #{meme.bottom}
+    .top(style='width: #{meme.width}px')= meme.top
+    .bottom(style='width: #{meme.width}px')= meme.bottom
   #displayTag(style='width: #{meme.width}px') TAG: #{meme.tag}
 
 block scripts
